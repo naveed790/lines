@@ -11,11 +11,13 @@
 \newcommand{\solution}{\noindent \textbf{Solution: }}
 \newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
 \let\vec\mathbf
+
 \begin{document}
 \begin{center}
 \textbf\large{CLASS-11 \\ CHAPTER-10 \\ STRAIGHT LINES}
 \end{center}
 \section*{Excercise 10.4}
+
 Q6. Find the equation of the line parallel to y-axis and drawn through the point of
 intersection of the lines x – 7y + 5 = 0 and 3x + y = 0.
 \section*{Solution}
@@ -52,12 +54,8 @@ The intersection of two lines is given by:
 \end{align}
 To find the equation of the line parallel to the y-axis and the line passing through the $\vec{P}$ is given as
 \begin{equation}
-    \vec{n}^{\top}\vec{m}=0
+    \vec{n}^{\top}\myvec{\vec{x}-\vec{P}}=0
     \label{eq:line}
-\end{equation}
-\begin{equation}
-    \vec{m}=\vec{x}-\vec{P}
-    \label{eq:direction}
 \end{equation}
 Since a line is parallel to the y-axis,normal vector is in the direction of the x-axis is
 \begin{equation}
