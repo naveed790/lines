@@ -42,7 +42,7 @@ The intersection of two lines is given by:
 0&22&-15
 }\vec{x}&=0\\\xleftrightarrow[]{R_2=\frac{R_2}{22}}
 \myvec{
-	1&-7&5\\[1pt]
+  1&-7&5\\[1pt]
 0&1&-\frac{15}{22}
 }\vec{x}&=0\\
 \xleftrightarrow[]{R_1={R_1}+7{R_2}}
@@ -50,16 +50,27 @@ The intersection of two lines is given by:
 1&0&\frac{5}{22}\\[1pt]
 0&1&\frac{-15}{22}
 }\vec{x}&=0 \label{eq:7}\\
-	\vec{x}&=\myvec{-\frac{5}{22}\\[1pt] \frac{15}{22}}\\
+  \vec{x}&=\myvec{-\frac{5}{22}\\[1pt] \frac{15}{22}}\\
 \end{align}
-The equation of line parallel to y-axis is given by:
+To find the equation of the line parallel to the y-axis and the line passing through the $\vec{P}$ is given as
+\begin{equation}
+    \vec{n}^{\top}\myvec{\vec{x}-\vec{P}}=0
+    \label{eq:line}
+\end{equation}
+Since a line is parallel to the y-axis,normal vector is in the direction of the x-axis is
+\begin{equation}
+    \vec{n}=\myvec{1\\0}
+    \label{eq:normal}
+\end{equation}
+Let $\vec{P}=\myvec{-\frac{5}{22}\\[1pt] \frac{15}{22}}$ and by using \eqref{eq:line} and \eqref{eq:normal}
 \begin{align}
-    \myvec{1&0}\Vec{x}=-\frac{5}{22}
+    \myvec{1&0}\myvec{\vec{x}-\myvec{-\frac{5}{22}\\[1pt] \frac{15}{22}}}=0\\
+    \myvec{1&0}\vec{x}=-\frac{5}{22}
 \end{align}
 \begin{figure}[H]
-	\begin{center} 
-	    \includegraphics[width=\columnwidth]{line.png}
-	\end{center}
+  \begin{center} 
+      \includegraphics[width=\columnwidth]{figs/line fig.png}
+  \end{center}
 \caption{}
 \label{fig:Fig3}
 \end{figure}
