@@ -4,12 +4,17 @@
 \usepackage{tkz-euclide}
 \begin{document}
 \begin{tikzpicture}[scale =1.5,>=stealth,point/.style = {draw, circle, fill = black, inner sep = 1pt},]
-\node (C) at (5,5)[point,label=above :$C$] {};
+\node (C) at (3,4)[point,label=above :$C$] {};
 \node (O) at (0,0)[point,label=above :$O$] {};
-\node (D) at (-5,-5)[point,label=below :$D$] {};
-\node (B) at (0,5)[point,label=above :$B$] {};
-\node (A) at (0,-5)[point,label=below :$A$] {};
-\draw (A)--(D);
+\node (D) at (-3,-4)[point,label=below :$D$] {};
+\node (B) at (0,4)[point,label=above :$B$] {};
+\node (A) at (0,-4)[point,label=below :$A$] {};
+\draw (A)--node[below] {$\textrm{a=4cm}$}(D);
+\draw (A)--node[right] {$\textrm{c=3cm}$}(O);
+\draw (D)--node[left] {$\textrm{b=5cm}$}(O);
+\draw (B)--node[left] {$\textrm{c=3cm}$}(O);
+\draw (B)--node[above] {$\textrm{a=4cm}$}(C);
+\draw (O)--node[right] {$\textrm{b=5cm}$}(C);
 \draw (A)--(O);
 \draw (D)--(O);
 \draw (O)--(C);
