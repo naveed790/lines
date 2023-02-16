@@ -39,21 +39,35 @@ Q3. AD and BC are equal perpendiculars to a line segment. Show that CD bisects A
 \label{fig:foo}
 \end{center}
 \end{figure}
-\textbf{Given:}
+Let
 \begin{align}
-    AD=BC\\
-    AD\perp BC \implies \angle OAD=90\degree\\
-    BC\perp AB \implies \angle OAD=90\degree
+    AD=a=4cm \\
+    OA=c=3cm \\
+    OD=b
 \end{align}
-\textbf{To Prove : CD bisects AB $\implies$ OA=OB}
-\subsection{Proof}
-In $\triangle{BOC}$ and $\triangle{AOD}$ and from given information
+Apply baudhayan theorem to find b for a triangle 
 \begin{align}
-    \angle BOC = \angle AOD \\
-    \angle CBO = \angle DAO \\
-    BC=AD\\
+    b^2=a^2+c^2\\
+    b=\sqrt{a^2+c^2}=\sqrt{4^2+3^2}=5cm
+\end{align}
+\begin{itemize}
+    \item  From the above figure,In $\triangle{BOC}$ and $\triangle{AOD}$ and from given information
+\end{itemize}
+    \begin{align}
+    \angle BOC = \angle AOD 
+    \label{eq:ang}\\
+    \angle CBO = \angle DAO 
+    \label{eq:ang2}\\
+    BC=AD = b \\
     \therefore \triangle{BOC} \cong \triangle{AOD}\\
-    \therefore OB = OA
-\end{align}
+    \therefore OB=OA= c
+    \end{align}
 Thus, CD bisects AB and O is the mid-point of AB.
+\begin{figure}[!h]
+ \begin{center}
+  \includegraphics[width=\columnwidth]{./figs/python_fig.png}
+ \end{center}
+\caption{}
+\label{fig:Python Generated Figure}
+\end{figure}
 \end{document}
