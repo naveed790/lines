@@ -1,73 +1,103 @@
-\documentclass[12pt]{article}
+\def\mytitle{TRIANGLES}
+\documentclass[10pt,a4paper]{article}
+\def\inputGnumericTable{}
+\usepackage[margin=0.3in]{geometry}
+   \usepackage[latin1]{inputenc}
+   \usepackage{fullpage}
+	\usepackage{color}
+	\usepackage{array}
+   \usepackage{longtable}
+     \usepackage{calc}
+       \usepackage{multirow}
+       \usepackage{hhline}
+       \usepackage{ifthen}
+\usepackage{gensymb}       
 \usepackage{graphicx}
+\graphicspath{{./images/}}
+\usepackage[colorlinks,linkcolor={black},citecolor={blue!80!black},urlcolor={blue!80!black}]{hyperref}
+\usepackage[parfill]{parskip}
+\usepackage{lmodern}
+\usepackage{tikz}
+\usepackage{physics}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usetikzlibrary{calc}
 \usepackage{amsmath}
-\usepackage{mathtools}
-\usepackage{gensymb}
-\usepackage[utf8]{inputenc}
-\usepackage{float}
 \usepackage{amssymb}
-\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
-\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
-%\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
-\newcommand{\solution}{\noindent \textbf{Solution: }}
-\renewcommand{\thefigure}{\thesection-\arabic{figure}}
-\usepackage{tkz-euclide}
-\usepackage[english]{babel}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{graphics}
-\usepackage{standalone}
-\usepackage{gensymb}
-\usepackage{amsmath}
+\renewcommand*\familydefault{\sfdefault}
+\usepackage{watermark}
+\usepackage{lipsum}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{titlesec}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\titlespacing{\subsection}{1pt}{\parskip}{3pt}
+\titlespacing{\subsubsection}{0pt}{\parskip}{-\parskip}
+\titlespacing{\paragraph}{0pt}{\parskip}{\parskip}
+
+
 \newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
 \let\vec\mathbf
+\lstset{
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\title{\mytitle}
 \begin{document}
 \begin{center}
-\textbf\large{ STRAIGHT LINES}
+\textbf\large{ STRAIGHT LINES}\\
+\textbf\large{Exercise 7.1}
 \end{center}
-\section*{Exercise 7.1}
-Q3. AD and BC are equal perpendiculars to a line segment. Show that CD bisects AB.
-\section*{Solution}
 
+\tableofcontents
+\section{Problem}
+Q3. AD and BC are equal perpendiculars to a line segment. Show that CD bisects AB.
 \begin{figure}[!h]
-\begin{center}
-\resizebox{0.3\linewidth}{!}
-{
-\input{./figs/fig}
-}
-\caption{Figure}
-\label{fig:foo}
-\end{center}
+	\begin{center}
+		\includegraphics[width=5in]{./figs/figure.png}
+	\end{center}
+\caption{}
+\label{figure}
 \end{figure}
-Let
+\pagebreak
+\section{Construction}
+The input parameters for this construction are
+\begin{table}[!h]
+\centering
+\input{./figs/table.tex}
+\caption{}
+\label{Inputs}
+\end{table}
+\section{Solution}
+\textbf{Given:}
 \begin{align}
-    AD=a=4cm \\
-    OA=c=3cm \\
-    OD=b
+    AD=BC\\
+    \angle{CBO}=\angle{DAO}
 \end{align}
-Apply baudhayan theorem to find b for a triangle 
+\textbf{To prove :}
 \begin{align}
-    b^2=a^2+c^2\\
-    b=\sqrt{a^2+c^2}=\sqrt{4^2+3^2}=5cm
+    \angle{ODA}=\angle{OCB}
 \end{align}
-\begin{itemize}
-    \item  From the above figure,In $\triangle{BOC}$ and $\triangle{AOD}$ and from given information
-\end{itemize}
-    \begin{align}
-    \angle BOC = \angle AOD 
-    \label{eq:ang}\\
-    \angle CBO = \angle DAO 
-    \label{eq:ang2}\\
-    BC=AD = b \\
-    \therefore \triangle{BOC} \cong \triangle{AOD}\\
-    \therefore OB=OA= c
-    \end{align}
-Thus, CD bisects AB and O is the mid-point of AB.
-\begin{figure}[!h]
- \begin{center}
-  \includegraphics[width=\columnwidth]{./figs/python_fig.png}
- \end{center}
-\caption{Python Generated Figure}
-\label{fig:Python Generated Figure}
-\end{figure}
+\textbf{Proof}\\
+The directional vectors are:
+\begin{align}
+    \vec{m_1}=\Vec{O}-\Vec{D}\\
+    \vec{m_2}=\Vec{D}-\Vec{A}
+\end{align}
+The Normal vectors are:
+\begin{align}
+    \vec{n_1}=\Vec{O}-\Vec{C}\\
+    \vec{n_2}=\Vec{C}-\Vec{B}\\
+\end{align}
+\begin{align}
+    \theta_1 =\cos^-^1\myvec{\frac{m_1^Tm_2}{\norm{m_1}\norm{m_2}}}\\
+    \theta_2 =\cos^-^1\myvec{\frac{n_1^Tn_2}{\norm{n_1}\norm{n_2}}}
+\end{align}
+If $\theta_1 = \theta_2$
+\begin{align}
+    \triangle{OBC} \cong \triangle{OAD}\\
+    OA = OB
+\end{align}
 \end{document}
