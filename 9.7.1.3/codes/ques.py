@@ -1,53 +1,54 @@
+import math
 import numpy as np
 import matplotlib.pyplot as plt
-def line_gen(A,B):
-  len =10
-  dim = A.shape[0]
-  x_AB = np.zeros((dim,len))
-  lam_1 = np.linspace(0,1,len)
-  for i in range(len):
-    temp1 = A + lam_1[i]*(B-A)
-    x_AB[:,i]= temp1.T
-  return x_AB
-omat = np.array([[0,1],[-1,0]]) 
-#Sides
-a = 4
-c = 3
-b=np.sqrt(a**2+c**2)
-print(b)
-#Triangle vertices
-O = np.array([0,0]) 
-A = np.array([0,-a]) 
-D = np.array([-c,-a])
-B = np.array([0,a]) 
-C = np.array([c,a])
+from numpy import linalg as  LA
+import subprocess
+import shlex
 
-#Generating all lines
-x_OA = line_gen(O,A)
-x_AD = line_gen(A,D)
-x_DO = line_gen(D,O)
-x_OB = line_gen(O,B)
-x_OC = line_gen(O,C)
-x_BC = line_gen(B,C)
-#Plotting all lines
-plt.plot(x_OA[0,:],x_OA[1,:],label='$OA$')
-plt.plot(x_AD[0,:],x_AD[1,:],label='$AD$')
-plt.plot(x_DO[0,:],x_DO[1,:],label='$DO$')
-plt.plot(x_OB[0,:],x_OB[1,:],label='$OB$')
-plt.plot(x_OC[0,:],x_OC[1,:],label='$OC$')
-plt.plot(x_BC[0,:],x_BC[1,:],label='$BC$')
-plt.plot(A[0], A[1], 'o')
-plt.text(A[0] * (1 + 0.03), A[1] * (1 - 0.1) , 'A(0,-4)')
-plt.plot(B[0], B[1], 'o')
-plt.text(B[0] * (1 +0.03), B[1] * (1) , 'B(0,4)')
-plt.plot(C[0], C[1], 'o')
-plt.text(C[0] * (1 + 0.03), C[1] * (1 - 0.1) , 'C(3,4)')
-plt.plot(O[0], O[1], 'o')
-plt.text(O[0] * (1 + 0.03), O[1] * (1 - 0.1) , 'O(0,0)')
-plt.plot(D[0], D[1], 'o')
-plt.text(D[0] * (1 -0.15), D[1] * (1 - 0.03) , 'D(-3,-4)')
-plt.xlabel('$x$')
-plt.ylabel('$y$')
-plt.legend(loc='best')
+
+#A=r*np.array(([np.cos(theta),np.sin(theta)]))
+A=np.array(([0,-3]))
+B=np.array(([0,3]))
+#e1=np.array(([1,0]))
+D=np.array(([-4,-3]))
+O=(A+B)/2
+C=np.array(([4,3]))
+
+#generating a line
+def line_gen(A,B):
+    len=10
+    dim = A.shape[0]
+    x_AB = np.zeros((dim,len))
+    lam_1 = np.linspace(0,1,len)
+    for i in range(len):
+        temp1 = A + lam_1[i]*(B-A)
+        x_AB[:,i] = temp1.T
+    return x_AB
+#generating all lines
+X_AB=line_gen(A,B)
+X_AD=line_gen(A,D)
+X_BC=line_gen(B,C)
+X_DC=line_gen(D,C)
+#plotting all lines
+plt.plot(X_AB[0,:],X_AB[1,:])
+plt.plot(X_AD[0,:],X_AD[1,:])
+plt.plot(X_BC[0,:],X_BC[1,:])
+plt.plot(X_DC[0,:],X_DC[1,:])
+
+
+
+#Labeling the coordinates
+tri_coords =np.vstack((B,C,D,A,O)).T
+
+plt.scatter(tri_coords[0,:],tri_coords[1,:])
+vert_labels = ['B','C','D','A','O']
+for i,txt in enumerate(vert_labels):
+  plt.annotate(txt,      (tri_coords[0,i],tri_coords[1,i]),
+      textcoords="offset points",      xytext=(0,10),
+      ha='center')
+plt.xlabel('$X$')
+plt.ylabel('$Y$')
 plt.grid()
+plt.axis('equal')
 plt.show()
+#plt.savefig('/sdcard/FWCmodule1/line/output.pdf')
