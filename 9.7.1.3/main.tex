@@ -63,13 +63,28 @@ Q3. AD and BC are equal perpendiculars to a line segment. Show that CD bisects A
 \end{figure}
 \pagebreak
 \section{Construction}
-The input parameters for this construction are
-\begin{table}[!h]
-\centering
-\input{./figs/fig.tex}
-\caption{}
-\label{Inputs}
-\end{table}
+The input parameters are the lengths a and c.\\
+{
+\setlength\extrarowheight{2pt}
+\begin{tabular}{|c|c|c|}
+	\hline
+	\textbf{Symbol}&\textbf{Value}&\textbf{Description}\\
+	\hline
+	a&4&$\vec{A}\vec{D}=\vec{B}\vec{C}$\\
+	\hline
+	c&3&$\vec{O}\vec{A}=\vec{O}\vec{B}$\\
+	\hline
+	$\theta$&arctan$\myvec{\frac{c}{a}}$&$\angle{D}=\angle{C}$\\
+	\hline
+	O&$\sqrt{a^2+c^2}%
+	\begin{pmatrix}
+		cos\theta\\
+		sin\theta\\
+	\end{pmatrix}$%
+	&Point O\\
+	\hline
+\end{tabular}
+}
 \section{Solution}
 \textbf{Given:}
 \begin{align}
