@@ -78,8 +78,8 @@ The input parameters are the lengths a and c.\\
 	\hline
 	$\vec{O}$&$\sqrt{a^2+c^2}%
 	\begin{pmatrix}
-		cos\theta\\
-		sin\theta\\
+		\cos\theta\\
+		\sin\theta\\
 	\end{pmatrix}$%
 	&Point $\vec{O}$\\
 	\hline
@@ -96,21 +96,40 @@ The input parameters are the lengths a and c.\\
     \angle{ODA}=\angle{OCB}
 \end{align}
 \textbf{Proof}\\
+Given Vectors are \\
+$\vec{A}=\myvec{4\\0},\vec{B}=\myvec{4\\10},\vec{C}=\myvec{8\\10},\vec{D}=\myvec{0\\0}$ and $\vec{O}=\myvec{4\\5}$\\
 The directional vectors are:
-\begin{align}
-    \vec{m_1}=\Vec{O}-\Vec{D}\\
-    \vec{m_2}=\Vec{D}-\Vec{A}
-\end{align}
+\begin{equation}
+    \vec{m_1}=\Vec{O}-\Vec{D} = \myvec{4\\5}-\myvec{0\\0}=\myvec{4\\5}
+    \label{eq:m1}
+\end{equation}
+\begin{equation}
+    \vec{m_2}=\Vec{D}-\Vec{A} = \myvec{0\\0}-\myvec{4\\0}=\myvec{-4\\0}\label{eq:m2}
+\end{equation}
 The Normal vectors are:
 \begin{align}
-    \vec{n_1}=\Vec{O}-\Vec{C}\\
-    \vec{n_2}=\Vec{C}-\Vec{B}\\
+    \vec{n_1}=\Vec{O}-\Vec{C}=\myvec{4\\5}-\myvec{8\\10}=\myvec{-4\\-5}
+    \label{eq:n1}\\
+    \vec{n_2}=\Vec{C}-\Vec{B}=\myvec{8\\10}-\myvec{4\\10}=\myvec{4\\0}
+    \label{eq:n2}
 \end{align}
 \begin{align}
-	\theta_1 =cos^{-1}\myvec{\frac{\vec{m_1}^T\vec{m_2}}{\norm{\vec{m_1}}\norm{\vec{m_2}}}}\\
+	\theta_1 =\cos^{-1}\myvec{\frac{\vec{m_1}^T\vec{m_2}}{\norm{\vec{m_1}}\norm{\vec{m_2}}}}
+    \label{eq:theta1}\\
 	\theta_2 =\cos^{-1}\myvec{\frac{\vec{n_1}^T\vec{n_2}}{\norm{\vec{n_1}}\norm{\vec{n_2}}}}
+ \label{eq:theta2}
 \end{align}
-If $\theta_1 = \theta_2$
+Substitue \eqref{eq:m1} and \eqref{eq:m2} in \eqref{eq:theta1}
+\begin{align}
+    \theta_1 =\cos^{-1}\myvec{\frac{\myvec{4&5}\myvec{-4\\0}}{25.61}}=\cos^{-1}\myvec{\frac{-16}{25.61}}
+    \label{eq:val1}
+\end{align}
+Substitue \eqref{eq:n1} and \eqref{eq:n2} in \eqref{eq:theta2}
+\begin{align}
+    \theta_2 =\cos^{-1}\myvec{\frac{\myvec{-4&-5}\myvec{4\\0}}{25.61}}=\cos^{-1}\myvec{\frac{-16}{25.61}}
+    \label{eq:val2}
+\end{align}
+From the \eqref{eq:val1} and \eqref{eq:val2} $\theta_1=\theta_2$, so
 \begin{align}
     \triangle{OBC} \cong \triangle{OAD}\\
     OA = OB
