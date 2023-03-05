@@ -6,19 +6,15 @@ import subprocess
 import shlex
 
 
-#A=r*np.array(([np.cos(theta),np.sin(theta)]))
-k = 1
-c = 5
 a = 4
-theta = np.arctan(c/a)
-O = np.sqrt(c**2+a**2)*np.array(([np.cos(theta),np.sin(theta)]))
-print(O)
-D = np.array(([0,0]))
-e1 = np.array(([1,0]))
-A=a*e1
-print(A)
-B=np.array(([a,2*c]))
-C=np.array(([2*a,2*c]))
+c = 3
+#Triangle vertices
+B = np.array([0,-c]) 
+O = np.array([0,0]) 
+C = np.array([-a,0]) 
+A=np.array([0,c])
+D=np.array([a,0])
+
 #e1=np.array(([1,0]))
 #D=np.array(([-4,-3]))
 #O=(A+B)/2
