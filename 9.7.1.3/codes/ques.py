@@ -9,11 +9,11 @@ import shlex
 a = 4
 c = 3
 #Triangle vertices
-B = np.array([0,-c]) 
+B = np.array([0,c]) 
 O = np.array([0,0]) 
-C = np.array([-a,0]) 
-A=np.array([0,c])
-D=np.array([a,0])
+C = np.array([a,c]) 
+A=np.array([0,-c])
+D=np.array([-a,-c])
 
 #e1=np.array(([1,0]))
 #D=np.array(([-4,-3]))
